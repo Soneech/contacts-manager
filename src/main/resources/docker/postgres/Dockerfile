@@ -1,0 +1,7 @@
+FROM postgres:15.2
+
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=postgres
+ENV POSTGRES_DB=contacts_db
+
+EXPOSE 5432
