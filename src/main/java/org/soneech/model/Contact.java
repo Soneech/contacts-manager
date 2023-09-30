@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table
 @NoArgsConstructor
@@ -18,15 +20,9 @@ public class Contact {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "first_name")
     @NotEmpty
     @Size(min = 2, max = 100)
-    private String firstName;
-
-    @Column(name = "last_name")
-    @NotEmpty
-    @Size(min = 2, max = 100)
-    private String lastName;
+    private String name;
 
     @Email
     @NotEmpty
@@ -37,4 +33,7 @@ public class Contact {
     @NotEmpty
     @Size(min = 11, max = 12)
     private String phoneNumber;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 }
